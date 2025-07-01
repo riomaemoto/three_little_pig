@@ -61,6 +61,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="py-20 sm:py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <Image
+              src="/bbq-premium-set.jpg"
+              alt="Ice Cream"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-black">

@@ -85,7 +85,7 @@ export default function Menu() {
     {
       price: "259",
       title: "Triple",
-      image: "/bbq-bulgogi.jpg",
+      image: "/IMG_1527.JPG",
       items: [
         "UNLI CHICKEN",
         "UNLI BEEF",
@@ -98,7 +98,7 @@ export default function Menu() {
     {
       price: "279",
       title: "Seafood Special",
-      image: "/bbq-premium-set.jpg",
+      image: "/IMG_1532.JPG",
       items: [
         "UNLI SCALLOP",
         "UNLI CHICKEN",
