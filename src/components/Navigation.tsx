@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import GlowingLogo from "./GlowingLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },

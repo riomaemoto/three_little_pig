@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import NeonBorder from "@/components/NeonBorder";
 import GlowingLogo from "@/components/GlowingLogo";
 
 export default function Home() {
