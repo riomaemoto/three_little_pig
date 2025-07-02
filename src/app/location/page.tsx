@@ -102,7 +102,7 @@ export default function Location() {
               >
                 {/* Restaurant Hero Section */}
                 {/* Google Maps Section */}
-                <div className="relative h-100 overflow-hidden rounded-t-3xl">
+                <div className="relative h-75 md:h-100 overflow-hidden rounded-t-3xl">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.2106500704033!2d120.9654505349493!3d14.60804074031149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cb006efbe027%3A0x61e2a23b712c4e03!2s3%20Little%20Pigs%20samgyupsal!5e0!3m2!1sen!2sjp!4v1751338723032!5m2!1sen!2sjp"
                     width="100%"

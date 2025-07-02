@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -9,19 +9,19 @@ const navLinks = [
   { href: "/location", label: "Location & Contact" },
 ];
 
-function NavLink({
-  href,
-  label,
-  className,
-}: {
+type NavLink = {
   href: string;
   label: string;
   className: string;
-}) {
+  onClick?: () => void;
+};
+
+function NavLink({ href, label, className, onClick }: NavLink) {
   return (
     <Link
       href={href}
       className={`text-2xl font-bold hover:text-yellow-400 transition-colors ${className}`}
+      onClick={onClick}
     >
       {label}
     </Link>
@@ -30,6 +30,21 @@ function NavLink({
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 text-white">
@@ -88,7 +103,7 @@ export default function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div ref={menuRef} className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-sm">
             {navLinks.map((link) => (
               <NavLink
@@ -96,6 +111,8 @@ export default function Navigation() {
                 href={link.href}
                 label={link.label}
                 className="block px-3 py-2"
+                // Close menu when clicking a link
+                onClick={() => setIsOpen(false)}
               />
             ))}
           </div>
