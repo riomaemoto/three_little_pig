@@ -33,7 +33,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Link
               href="/menu"
-              className="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-yellow-300 transition-colors transform hover:scale-105 duration-300 shadow-lg"
+              className="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-yellow-300 transition-colors transform hover:scale-105 duration-300 shadow-lg text-center"
             >
               View Menu
             </Link>
