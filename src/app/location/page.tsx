@@ -4,7 +4,6 @@ import GlowingLogo from "@/components/GlowingLogo";
 interface Location {
   name: string;
   address: string;
-  phone: string;
   hours: Record<string, string>;
   features: string[];
 }
@@ -22,15 +21,10 @@ export default function Location() {
       name: "3 Little Pigs Samgyupsal",
       address:
         "1216 Asuncion St, Tondo, City Of Manila, 1012 Metro Manila, Philippines",
-      phone: "(02) 8555-1234",
       hours: {
-        "Monday - Thursday": "11:00 AM - 10:00 PM",
-        "Friday - Sunday": "11:00 AM - 11:00 PM",
+        Everyday: "2:00 PM - 1:00 AM",
       },
       features: [
-        "Street Parking Available",
-        "Air Conditioned",
-        "Authentic Korean BBQ",
         "Family-Friendly",
         "Unlimited Samgyupsal",
         "Fresh Ingredients",
@@ -40,15 +34,15 @@ export default function Location() {
 
   const contactMethods: ContactMethod[] = [
     {
-      method: "Phone Reservations",
-      details: "(02) 8555-1234",
-      hours: "Daily 9:00 AM - 9:00 PM",
-      iconClass: "phone",
+      method: "Facebook Page",
+      details: "https://m.facebook.com/61550044936184/",
+      hours: "Available 24/7",
+      iconClass: "facebook",
     },
     {
       method: "Walk-in",
       details: "Subject to availability",
-      hours: "During operating hours",
+      hours: "2:00PM - 1:00AM",
       iconClass: "walk-in",
     },
   ];
@@ -108,7 +102,7 @@ export default function Location() {
               >
                 {/* Restaurant Hero Section */}
                 {/* Google Maps Section */}
-                <div className="relative h-80 overflow-hidden rounded-t-3xl">
+                <div className="relative h-100 overflow-hidden rounded-t-3xl">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.2106500704033!2d120.9654505349493!3d14.60804074031149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cb006efbe027%3A0x61e2a23b712c4e03!2s3%20Little%20Pigs%20samgyupsal!5e0!3m2!1sen!2sjp!4v1751338723032!5m2!1sen!2sjp"
                     width="100%"
@@ -119,12 +113,6 @@ export default function Location() {
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-full"
                   ></iframe>
-
-                  {/* Overlay with restaurant info */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-red-800/90 to-orange-600/90 backdrop-blur-sm text-white px-6 py-4 rounded-2xl shadow-lg border border-yellow-400/30">
-                    <h3 className="text-xl font-bold mb-1">{location.name}</h3>
-                    <p className="text-orange-200 text-sm">📍 Tondo, Manila</p>
-                  </div>
                 </div>
 
                 <div className="p-8 md:p-12">
@@ -156,27 +144,27 @@ export default function Location() {
                         </p>
                       </div>
 
-                      {/* Phone */}
+                      {/* Facebook Page */}
                       <div className="group">
                         <div className="flex items-center mb-3">
                           <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                             <svg
                               className="w-6 h-6 text-black"
                               fill="currentColor"
-                              viewBox="0 0 20 20"
+                              viewBox="0 0 24 24"
                             >
-                              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                              <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.407 0 22.675 0z" />
                             </svg>
                           </div>
                           <h4 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
-                            Phone
+                            Facebook Page
                           </h4>
                         </div>
                         <a
-                          href={`tel:${location.phone}`}
+                          href="https://m.facebook.com/61550044936184/"
                           className="text-yellow-400 hover:text-yellow-300 text-lg font-medium ml-16 transition-colors hover:underline"
                         >
-                          {location.phone}
+                          Visit our Facebook Page
                         </a>
                       </div>
                     </div>
@@ -255,10 +243,17 @@ export default function Location() {
                   {/* Action Buttons */}
                   <div className="mt-10 flex flex-col sm:flex-row gap-4">
                     <a
-                      href={`tel:${location.phone}`}
+                      href="https://m.facebook.com/61550044936184/"
                       className="flex-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black py-4 px-8 rounded-xl text-center font-bold text-lg hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-lg"
                     >
-                      📞 Call for Reservation
+                      <svg
+                        className="w-6 h-6 inline-block mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.407 0 22.675 0z" />
+                      </svg>
+                      Message us on Facebook
                     </a>
                     <button className="flex-1 border-2 border-yellow-400 text-yellow-400 py-4 px-8 rounded-xl font-bold text-lg hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105">
                       📍 Get Directions
@@ -290,88 +285,81 @@ export default function Location() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {contactMethods.map((method, index) => (
-              <div
-                key={index}
-                className="group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-yellow-400/20 rounded-3xl p-8 hover:border-yellow-400/60 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl"
-              >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-yellow-400/5 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <div className="relative z-10">
-                  {/* Icon Background */}
-                  <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                    {method.iconClass === "phone" && (
-                      <svg
-                        className="w-10 h-10 text-black"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                      </svg>
-                    )}
-                    {method.iconClass === "walk-in" && (
-                      <svg
-                        className="w-10 h-10 text-black"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors duration-300">
-                    {method.method}
-                  </h3>
-
-                  <div className="bg-gray-800/50 rounded-xl p-4 mb-4">
-                    <p className="text-gray-200 text-lg font-medium mb-2">
-                      {method.details}
-                    </p>
-                    <p className="text-yellow-400 text-sm font-semibold uppercase tracking-wider">
-                      {method.hours}
-                    </p>
-                  </div>
-
-                  {method.iconClass === "phone" && (
-                    <div className="mt-6">
-                      <a
-                        href={`tel:${method.details}`}
-                        className="inline-flex items-center bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 py-3 rounded-xl font-bold hover:from-red-500 hover:to-orange-500 transition-all duration-300 group-hover:scale-105"
-                      >
+            {contactMethods.map((method, index) => {
+              const cardContent = (
+                <div className="group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-yellow-400/20 rounded-3xl p-8 hover:border-yellow-400/60 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl">
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-yellow-400/5 to-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    {/* Icon Background */}
+                    <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                      {method.iconClass === "facebook" && (
                         <svg
-                          className="w-5 h-5 mr-2"
+                          className="w-10 h-10 text-black"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.407 0 22.675 0z" />
+                        </svg>
+                      )}
+
+                      {method.iconClass === "walk-in" && (
+                        <svg
+                          className="w-10 h-10 text-black"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
-                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                          <path
+                            fillRule="evenodd"
+                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clipRule="evenodd"
+                          />
                         </svg>
-                        Call Now
-                      </a>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                {/* Border Animation */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-yellow-400/40 transition-all duration-500"></div>
-              </div>
-            ))}
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-yellow-400 transition-colors duration-300">
+                      {method.method}
+                    </h3>
+
+                    <div className="bg-gray-800/50 rounded-xl p-4 mb-4">
+                      <p className="text-yellow-400 text-sm font-semibold uppercase tracking-wider">
+                        {method.hours}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Border Animation */}
+                  <div className="absolute inset-0 rounded-3xl border-2 border-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              );
+
+              // Wrap the card in an <a> tag if it's the Facebook card
+              return method.iconClass === "facebook" ? (
+                <a
+                  key={index}
+                  href={method.details}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div key={index}>{cardContent}</div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Important Notes */}
-      <section className="py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-black">
+      {/* Reservation and Services */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Important Information
-            </h3>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+              Enhance Your Experience
+            </h2>
             <div className="w-16 h-1 bg-yellow-400 mx-auto mb-4"></div>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Everything you need to know for the perfect dining experience
@@ -444,7 +432,7 @@ export default function Location() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-start group/item">
                     <div className="w-2 h-2 bg-yellow-500 rounded-full mt-3 mr-4 flex-shrink-0 group-hover/item:bg-yellow-400 transition-colors"></div>
-                    <p className="text-gray-300 leading-relaxed group-hover/item:text-white transition-colors">
+                    <p className="text-gray-300 leading-relaxed group-hover:item:text-white transition-colors">
                       {item}
                     </p>
                   </div>
@@ -481,19 +469,19 @@ export default function Location() {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
             <a
-              href="tel:+63285551234"
+              href="https://m.facebook.com/61550044936184/"
               className="group relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-8 py-4 rounded-2xl font-black text-lg hover:from-yellow-300 hover:to-orange-300 transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center justify-center">
                 <svg
-                  className="w-6 h-6 mr-3"
+                  className="w-10 h-10 pr-4 text-black"
                   fill="currentColor"
-                  viewBox="0 0 20 20"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.593 1.324-1.326V1.326C24 .593 23.407 0 22.675 0z" />
                 </svg>
-                Call Now for Reservation
+                Message now on Facebook
               </div>
             </a>
 
@@ -503,17 +491,6 @@ export default function Location() {
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 mr-3"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm8 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1V8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
                 View Our Menu
               </div>
             </a>

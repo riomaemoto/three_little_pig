@@ -49,11 +49,6 @@ function MenuCard({ price, items, image, title }: MenuCardProps) {
         </div>
 
         {/* Order Button */}
-        <div className="text-center">
-          <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-8 py-3 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-red-800">
-            Order Now
-          </button>
-        </div>
       </div>
 
       {/* Decorative Corner */}
