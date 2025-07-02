@@ -18,6 +18,19 @@ export const metadata: Metadata = {
     "UNLIMITED SAMGYUPSAL - Authentic Samgyupsal in the Manila Philippines",
   description:
     "Experience the best Korean BBQ samgyupsal in the Philippines. Fresh marinated pork belly, unlimited banchan, and family-friendly atmosphere.",
+  openGraph: {
+    title:
+      "UNLIMITED SAMGYUPSAL - Authentic Samgyupsal in the Manila Philippines",
+    description:
+      "Experience the best Korean BBQ samgyupsal in the Philippines. Fresh marinated pork belly, unlimited banchan, and family-friendly atmosphere.", // Reuse the same description
+    images: [
+      {
+        url: "/samgyupsal-classic.jpg",
+        alt: "A delicious unlimited samgyupsal with side dishes in Manila Philippines",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
