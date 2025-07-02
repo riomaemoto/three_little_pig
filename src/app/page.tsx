@@ -35,7 +35,7 @@ export default function Home() {
               href="/menu"
               className="bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-yellow-300 transition-colors transform hover:scale-105 duration-300 shadow-lg"
             >
-              View Our Menu
+              View Menu
             </Link>
             <Link
               href="/location"

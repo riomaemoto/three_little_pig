@@ -36,7 +36,10 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-3xl font-bold text-white">
+            <Link
+              href="/"
+              className="text-sm mt-4 md:text-3xl font-bold text-white"
+            >
               3 Little Pigs Samgyupsal
             </Link>
           </div>
