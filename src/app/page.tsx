@@ -41,7 +41,7 @@ export default function Home() {
               href="/location"
               className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-white hover:text-black transition-colors transform hover:scale-105 duration-300 shadow-lg backdrop-blur-sm"
             >
-              Call For Reservation
+              View Location
             </Link>
           </div>
         </div>
