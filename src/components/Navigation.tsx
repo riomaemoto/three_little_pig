@@ -53,7 +53,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="text-sm mt-4 md:text-3xl font-bold text-white"
+              className="text-sm mt-3 md:text-3xl font-bold text-white"
             >
               3 Little Pigs Samgyupsal
             </Link>
