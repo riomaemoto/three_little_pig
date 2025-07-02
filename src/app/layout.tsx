@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Seoul BBQ House - Authentic Samgyupsal in the Philippines",
-  description: "Experience the best Korean BBQ samgyupsal in the Philippines. Fresh marinated pork belly, unlimited banchan, and family-friendly atmosphere.",
+  title:
+    "UNLIMITED SAMGYUPSAL - Authentic Samgyupsal in the Manila Philippines",
+  description:
+    "Experience the best Korean BBQ samgyupsal in the Philippines. Fresh marinated pork belly, unlimited banchan, and family-friendly atmosphere.",
 };
 
 export default function RootLayout({
